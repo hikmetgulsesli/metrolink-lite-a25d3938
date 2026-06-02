@@ -1,0 +1,96 @@
+[
+  {
+    "screenId": "2916a226e70a4fe4b03676c6392fa40f",
+    "title": "Game Settings - MetroLink Lite",
+    "componentName": "GameSettingsMetrolinkLite",
+    "file": "src/screens/GameSettingsMetrolinkLite.tsx",
+    "buttons": 9,
+    "inputs": 1,
+    "links": 0,
+    "actions": [
+      {
+        "id": "close-1",
+        "kind": "button",
+        "label": "Close",
+        "index": 0
+      },
+      {
+        "id": "beginner-2",
+        "kind": "button",
+        "label": "Beginner",
+        "index": 1
+      },
+      {
+        "id": "commuter-3",
+        "kind": "button",
+        "label": "Commuter",
+        "index": 2
+      },
+      {
+        "id": "express-4",
+        "kind": "button",
+        "label": "Express",
+        "index": 3
+      },
+      {
+        "id": "bullet-5",
+        "kind": "button",
+        "label": "Bullet",
+        "index": 4
+      },
+      {
+        "id": "button-6-6",
+        "kind": "button",
+        "label": "Button 6",
+        "index": 5
+      },
+      {
+        "id": "button-7-7",
+        "kind": "button",
+        "label": "Button 7",
+        "index": 6
+      },
+      {
+        "id": "reset-defaults-8",
+        "kind": "button",
+        "label": "Reset Defaults",
+        "index": 7
+      },
+      {
+        "id": "save-and-return-9",
+        "kind": "button",
+        "label": "Save and Return",
+        "index": 8
+      }
+    ]
+  },
+  {
+    "screenId": "8cad6742d97440e4954570bdc2575ba1",
+    "title": "Gameplay - MetroLink Lite",
+    "componentName": "GameplayMetrolinkLite",
+    "file": "src/screens/GameplayMetrolinkLite.tsx",
+    "buttons": 3,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "refresh-1",
+        "kind": "button",
+        "label": "Refresh",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "Pause",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      }
+    ]
+  }
+]
