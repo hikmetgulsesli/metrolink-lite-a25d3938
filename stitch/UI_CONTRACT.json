@@ -1,0 +1,145 @@
+[
+  {
+    "screenId": "2916a226e70a4fe4b03676c6392fa40f",
+    "screenTitle": "Game Settings - MetroLink Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "close",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "Beginner",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "Commuter",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "Express",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Bullet",
+        "line": 155
+      },
+      {
+        "type": "button",
+        "label": "Reset Defaults",
+        "line": 220
+      },
+      {
+        "type": "button",
+        "label": "Save &amp; Return",
+        "line": 221
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 171
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "close",
+        "line": 142
+      },
+      {
+        "type": "button",
+        "label": "Beginner",
+        "line": 152
+      },
+      {
+        "type": "button",
+        "label": "Commuter",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "Express",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Bullet",
+        "line": 155
+      },
+      {
+        "type": "button",
+        "label": "Reset Defaults",
+        "line": 220
+      },
+      {
+        "type": "button",
+        "label": "Save &amp; Return",
+        "line": 221
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 171
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "8cad6742d97440e4954570bdc2575ba1",
+    "screenTitle": "Gameplay - MetroLink Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Refresh",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "ESC",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 164
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Refresh",
+        "line": 156
+      },
+      {
+        "type": "button",
+        "label": "ESC",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 164
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 3,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
