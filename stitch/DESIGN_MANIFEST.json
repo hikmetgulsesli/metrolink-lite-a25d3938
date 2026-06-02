@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "2916a226e70a4fe4b03676c6392fa40f",
+    "title": "Game Settings - MetroLink Lite",
+    "htmlFile": "2916a226e70a4fe4b03676c6392fa40f.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzlmZjUyOWMxN2NmNDRiZDk5YTJmNGQ3YWQxZTAwMTM1EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDM5MTQ2NTU1MTEyMDI5MTk2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/metrolink-lite-a25d3938/stitch/2916a226e70a4fe4b03676c6392fa40f.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "8cad6742d97440e4954570bdc2575ba1",
+    "title": "Gameplay - MetroLink Lite",
+    "htmlFile": "8cad6742d97440e4954570bdc2575ba1.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2M2YjBhMzM2ZWE5OTQzMzZiMGQ2NjFhNWMxMmEwNjRkEgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2MDM5MTQ2NTU1MTEyMDI5MTk2&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/metrolink-lite-a25d3938/stitch/8cad6742d97440e4954570bdc2575ba1.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

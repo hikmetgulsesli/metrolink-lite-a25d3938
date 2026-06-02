@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "2916a226e70a4fe4b03676c6392fa40f",
+    "name": "Game Settings - MetroLink Lite",
+    "type": "settings",
+    "description": "Game Settings - MetroLink Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  },
+  {
+    "screenId": "8cad6742d97440e4954570bdc2575ba1",
+    "name": "Gameplay - MetroLink Lite",
+    "type": "game",
+    "description": "Gameplay - MetroLink Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  }
+]

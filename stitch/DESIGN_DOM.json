@@ -1,0 +1,624 @@
+{
+  "generatedAt": "2026-06-02T22:59:04.593Z",
+  "screenCount": 2,
+  "screens": {
+    "2916a226e70a4fe4b03676c6392fa40f": {
+      "screenId": "2916a226e70a4fe4b03676c6392fa40f",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "section",
+          "layout": "block",
+          "classes": [
+            "font-label-caps",
+            "text-label-caps",
+            "text-on-surface-variant",
+            "mb-3",
+            "uppercase"
+          ],
+          "childCount": 1
+        },
+        {
+          "tag": "section",
+          "layout": "flex-row",
+          "classes": [
+            "flex",
+            "justify-between",
+            "items-center",
+            "mb-3"
+          ],
+          "childCount": 4
+        },
+        {
+          "tag": "section",
+          "layout": "block",
+          "classes": [
+            "font-label-caps",
+            "text-label-caps",
+            "text-on-surface-variant",
+            "mb-3",
+            "uppercase"
+          ],
+          "childCount": 5
+        },
+        {
+          "tag": "section",
+          "layout": "block",
+          "classes": [
+            "font-label-caps",
+            "text-label-caps",
+            "text-on-surface-variant",
+            "mb-3",
+            "uppercase"
+          ],
+          "childCount": 4
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "close",
+          "classes": [
+            "p-2",
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-colors",
+            "rounded-full",
+            "hover:bg-surface-container-low",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Beginner",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "px-3",
+            "rounded-md",
+            "font-body-md",
+            "text-body-md",
+            "text-center",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-secondary",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Commuter",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "px-3",
+            "rounded-md",
+            "font-body-md",
+            "text-body-md",
+            "text-center",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-secondary",
+            "bg-surface-container-lowest",
+            "text-primary",
+            "shadow-sm",
+            "border",
+            "border-outline-variant",
+            "font-bold"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Express",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "px-3",
+            "rounded-md",
+            "font-body-md",
+            "text-body-md",
+            "text-center",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-secondary",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Bullet",
+          "classes": [
+            "flex-1",
+            "py-2",
+            "px-3",
+            "rounded-md",
+            "font-body-md",
+            "text-body-md",
+            "text-center",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-secondary",
+            "text-on-surface-variant",
+            "hover:bg-surface-variant"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Reset Defaults",
+          "classes": [
+            "font-body-md",
+            "text-body-md",
+            "text-on-surface-variant",
+            "hover:text-primary",
+            "transition-colors",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-primary",
+            "rounded",
+            "px-2",
+            "py-1"
+          ],
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Save & Return",
+          "classes": [
+            "bg-primary",
+            "text-on-primary",
+            "font-body-md",
+            "text-body-md",
+            "font-bold",
+            "py-2",
+            "px-6",
+            "rounded",
+            "transit-shadow-level-2",
+            "transit-button-press",
+            "transition-all",
+            "focus:outline-none",
+            "focus:ring-2",
+            "focus:ring-offset-2",
+            "focus:ring-primary",
+            "hover:transit-shadow-level-3"
+          ],
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "range",
+          "label": "Game Speed Slider",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "w-full",
+            "mt-2",
+            "opacity-0",
+            "absolute",
+            "h-6",
+            "cursor-pointer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "close",
+        "speed",
+        "volume_up",
+        "music_note",
+        "ads_click",
+        "route",
+        "timer"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "secondary": "#005fae",
+        "inverse-primary": "#c6c6c9",
+        "secondary-fixed-dim": "#a5c8ff",
+        "on-secondary-fixed": "#001c3a",
+        "primary-fixed-dim": "#c6c6c9",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#2e3132",
+        "tertiary-fixed-dim": "#ffb4a9",
+        "error": "#ba1a1a",
+        "on-surface": "#191c1e",
+        "error-container": "#ffdad6",
+        "tertiary-fixed": "#ffdad5",
+        "outline": "#75777a",
+        "surface-container-low": "#f3f4f6",
+        "surface": "#f8f9fb",
+        "surface-tint": "#5d5e61",
+        "surface-container-high": "#e7e8ea",
+        "on-error-container": "#93000a",
+        "on-surface-variant": "#44474a",
+        "on-error": "#ffffff",
+        "surface-bright": "#f8f9fb",
+        "on-tertiary-fixed-variant": "#930002",
+        "background": "#f8f9fb",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#fb3426",
+        "on-secondary-fixed-variant": "#004785",
+        "surface-dim": "#d9dadc",
+        "on-primary": "#ffffff",
+        "primary": "#000101",
+        "inverse-on-surface": "#f0f1f3",
+        "secondary-container": "#51a0ff",
+        "surface-container": "#edeef0",
+        "primary-container": "#1a1c1e",
+        "outline-variant": "#c5c6ca",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#1a1c1e",
+        "surface-variant": "#e1e2e4",
+        "on-primary-container": "#838486",
+        "primary-fixed": "#e2e2e5",
+        "secondary-fixed": "#d4e3ff",
+        "surface-container-highest": "#e1e2e4",
+        "tertiary": "#040000",
+        "tertiary-container": "#420000",
+        "on-primary-fixed-variant": "#454749",
+        "on-secondary-container": "#003666",
+        "on-tertiary-fixed": "#410000",
+        "on-background": "#191c1e"
+      },
+      "fonts": [
+        "Montserrat",
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 4,
+        "flexDirection": "col",
+        "gap": "8"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "close",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "Beginner",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Commuter",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Express",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Bullet",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Reset Defaults",
+          "icon": null,
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "Save & Return",
+          "icon": null,
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "input",
+          "label": "Game Speed Slider",
+          "type": "range",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Game Settings - MetroLink Lite"
+    },
+    "8cad6742d97440e4954570bdc2575ba1": {
+      "screenId": "8cad6742d97440e4954570bdc2575ba1",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "block",
+          "classes": [
+            "bg-surface",
+            "shadow-sm",
+            "docked",
+            "full-width",
+            "top-0",
+            "z-50"
+          ],
+          "childCount": 9
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-grow",
+            "flex",
+            "items-center",
+            "justify-center",
+            "p-8",
+            "bg-surface-container-lowest"
+          ],
+          "childCount": 13
+        },
+        {
+          "tag": "footer",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface-container",
+            "border-t",
+            "border-outline-variant",
+            "py-4",
+            "px-container-margin",
+            "w-full",
+            "flex",
+            "items-center",
+            "justify-between"
+          ],
+          "childCount": 5
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "Refresh",
+          "classes": [
+            "w-10",
+            "h-10",
+            "rounded",
+            "bg-surface-container",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "shadow-tile-base",
+            "active:translate-y-0.5",
+            "active:shadow-none"
+          ],
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ESC",
+          "classes": [
+            "h-10",
+            "px-4",
+            "rounded",
+            "bg-primary",
+            "text-on-primary",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2",
+            "hover:bg-primary-container",
+            "transition-colors",
+            "shadow-tile-base",
+            "active:translate-y-0.5",
+            "active:shadow-none"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "classes": [
+            "w-10",
+            "h-10",
+            "rounded",
+            "bg-surface-container",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-on-surface",
+            "hover:bg-surface-container-high",
+            "transition-colors",
+            "shadow-tile-base",
+            "active:translate-y-0.5",
+            "active:shadow-none",
+            "hidden"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "CONNECTION EFFICIENCY",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Routes Active: 1 / 3",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "refresh",
+        "pause",
+        "settings"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "secondary": "#005fae",
+        "inverse-primary": "#c6c6c9",
+        "secondary-fixed-dim": "#a5c8ff",
+        "on-secondary-fixed": "#001c3a",
+        "primary-fixed-dim": "#c6c6c9",
+        "on-tertiary": "#ffffff",
+        "inverse-surface": "#2e3132",
+        "tertiary-fixed-dim": "#ffb4a9",
+        "error": "#ba1a1a",
+        "on-surface": "#191c1e",
+        "error-container": "#ffdad6",
+        "tertiary-fixed": "#ffdad5",
+        "outline": "#75777a",
+        "surface-container-low": "#f3f4f6",
+        "surface": "#f8f9fb",
+        "surface-tint": "#5d5e61",
+        "surface-container-high": "#e7e8ea",
+        "on-error-container": "#93000a",
+        "on-surface-variant": "#44474a",
+        "on-error": "#ffffff",
+        "surface-bright": "#f8f9fb",
+        "on-tertiary-fixed-variant": "#930002",
+        "background": "#f8f9fb",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#fb3426",
+        "on-secondary-fixed-variant": "#004785",
+        "surface-dim": "#d9dadc",
+        "on-primary": "#ffffff",
+        "primary": "#000101",
+        "inverse-on-surface": "#f0f1f3",
+        "secondary-container": "#51a0ff",
+        "surface-container": "#edeef0",
+        "primary-container": "#1a1c1e",
+        "outline-variant": "#c5c6ca",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#1a1c1e",
+        "surface-variant": "#e1e2e4",
+        "on-primary-container": "#838486",
+        "primary-fixed": "#e2e2e5",
+        "secondary-fixed": "#d4e3ff",
+        "surface-container-highest": "#e1e2e4",
+        "tertiary": "#040000",
+        "tertiary-container": "#420000",
+        "on-primary-fixed-variant": "#454749",
+        "on-secondary-container": "#003666",
+        "on-tertiary-fixed": "#410000",
+        "on-background": "#191c1e"
+      },
+      "fonts": [
+        "Montserrat",
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 8,
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "Refresh",
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ESC",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "CONNECTION EFFICIENCY",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Routes Active: 1 / 3",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "CONNECTION EFFICIENCY",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "Routes Active: 1 / 3",
+          "icon": null,
+          "active": true
+        }
+      ],
+      "title": "Gameplay - MetroLink Lite"
+    }
+  }
+}

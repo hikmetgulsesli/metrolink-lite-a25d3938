@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MetroLink Lite - Game Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#005fae",
+                    "inverse-primary": "#c6c6c9",
+                    "secondary-fixed-dim": "#a5c8ff",
+                    "on-secondary-fixed": "#001c3a",
+                    "primary-fixed-dim": "#c6c6c9",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#2e3132",
+                    "tertiary-fixed-dim": "#ffb4a9",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdad5",
+                    "outline": "#75777a",
+                    "surface-container-low": "#f3f4f6",
+                    "surface": "#f8f9fb",
+                    "surface-tint": "#5d5e61",
+                    "surface-container-high": "#e7e8ea",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#44474a",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9fb",
+                    "on-tertiary-fixed-variant": "#930002",
+                    "background": "#f8f9fb",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#fb3426",
+                    "on-secondary-fixed-variant": "#004785",
+                    "surface-dim": "#d9dadc",
+                    "on-primary": "#ffffff",
+                    "primary": "#000101",
+                    "inverse-on-surface": "#f0f1f3",
+                    "secondary-container": "#51a0ff",
+                    "surface-container": "#edeef0",
+                    "primary-container": "#1a1c1e",
+                    "outline-variant": "#c5c6ca",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#1a1c1e",
+                    "surface-variant": "#e1e2e4",
+                    "on-primary-container": "#838486",
+                    "primary-fixed": "#e2e2e5",
+                    "secondary-fixed": "#d4e3ff",
+                    "surface-container-highest": "#e1e2e4",
+                    "tertiary": "#040000",
+                    "tertiary-container": "#420000",
+                    "on-primary-fixed-variant": "#454749",
+                    "on-secondary-container": "#003666",
+                    "on-tertiary-fixed": "#410000",
+                    "on-background": "#191c1e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "hud-padding": "16px",
+                    "container-margin": "24px",
+                    "tile-gap": "4px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .transit-shadow-level-2 {
+            box-shadow: 0 2px 0 0 rgba(0, 1, 1, 0.8);
+        }
+        .transit-shadow-level-3 {
+            box-shadow: 0 4px 6px -1px rgba(0, 1, 1, 0.1), 0 2px 4px -1px rgba(0, 1, 1, 0.06);
+            transform: translateY(-2px);
+        }
+        .transit-button-press:active {
+            box-shadow: none;
+            transform: translateY(2px);
+        }
+        .glass-overlay {
+            backdrop-filter: blur(12px);
+            background-color: rgba(248, 249, 251, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen w-screen overflow-hidden flex items-center justify-center font-body-md antialiased relative">
+<!-- Simulated Dimmed Gameplay Background -->
+<div class="absolute inset-0 z-0 bg-surface-variant flex items-center justify-center">
+<!-- Placeholder Grid for Context -->
+<div class="grid grid-cols-4 gap-tile-gap opacity-30">
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+<div class="w-16 h-16 bg-surface-container-lowest rounded shadow-sm"></div>
+</div>
+</div>
+<!-- Dimming Overlay -->
+<div class="absolute inset-0 z-10 glass-overlay"></div>
+<!-- Modal Container (Level 4 Elevation) -->
+<div class="relative z-20 w-full max-w-[560px] bg-surface-container-lowest rounded-xl shadow-xl border border-outline-variant flex flex-col max-h-[921px]">
+<!-- Header -->
+<div class="px-container-margin py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest rounded-t-xl shrink-0">
+<div>
+<h1 class="font-headline-md text-headline-md text-primary">Game Settings</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1 uppercase">MetroLink Lite</p>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-low focus:outline-none focus:ring-2 focus:ring-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<!-- Scrollable Content -->
+<div class="p-container-margin overflow-y-auto flex flex-col gap-8">
+<!-- Difficulty Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">Difficulty</h2>
+<div class="flex bg-surface-container-low rounded-lg p-1 border border-outline-variant">
+<button class="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant">Beginner</button>
+<button class="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold">Commuter</button>
+<button class="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant">Express</button>
+<button class="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant">Bullet</button>
+</div>
+</section>
+<!-- Game Speed Section -->
+<section>
+<div class="flex justify-between items-center mb-3">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Game Speed</h2>
+<span class="font-body-md text-body-md text-primary font-bold">Normal</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">speed</span>
+<div class="relative flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-secondary w-1/2 rounded-full"></div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<input aria-label="Game Speed Slider" class="w-full mt-2 opacity-0 absolute h-6 cursor-pointer" max="100" min="1" type="range" value="50"/>
+</section>
+<!-- Audio Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">Audio</h2>
+<div class="space-y-4">
+<!-- Toggle 1 -->
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">volume_up</span>
+<span class="font-body-md text-body-md text-primary">Sound Effects</span>
+</div>
+<button aria-checked="true" class="w-12 h-6 bg-secondary rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border border-transparent" role="switch">
+<span class="absolute right-1 top-1 w-4 h-4 bg-surface-container-lowest rounded-full transition-transform"></span>
+</button>
+</div>
+<!-- Toggle 2 -->
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">music_note</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Background Jazz</span>
+</div>
+<button aria-checked="false" class="w-12 h-6 bg-surface-container-high rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border border-outline-variant" role="switch">
+<span class="absolute left-1 top-1 w-4 h-4 bg-surface-tint rounded-full transition-transform"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Help Section -->
+<section>
+<h2 class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">How to Play</h2>
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">ads_click</span>
+<p class="font-body-md text-body-md text-primary">Click tiles to rotate them and form paths.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">route</span>
+<p class="font-body-md text-body-md text-primary">Connect all stations to complete the level.</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">timer</span>
+<p class="font-body-md text-body-md text-primary">Be faster for bonus points.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Actions -->
+<div class="px-container-margin py-4 border-t border-outline-variant bg-surface-container-lowest rounded-b-xl flex justify-between items-center shrink-0">
+<button class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1">Reset Defaults</button>
+<button class="bg-primary text-on-primary font-body-md text-body-md font-bold py-2 px-6 rounded transit-shadow-level-2 transit-button-press transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:transit-shadow-level-3">Save &amp; Return</button>
+</div>
+</div>
+</body></html>
