@@ -19,6 +19,18 @@ export default function App() {
     return detachMetroLinkTestBridge;
   }, [actions]);
 
+  useEffect(() => {
+    if (state.activeScreen !== 'gameplay' || state.runtime.paused) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      actions.advance();
+    }, 700);
+
+    return () => window.clearInterval(intervalId);
+  }, [actions, state.activeScreen, state.runtime.paused]);
+
   const gameplayActions = {
     'refresh-1': actions.refresh,
     'pause-2': actions.pause,
