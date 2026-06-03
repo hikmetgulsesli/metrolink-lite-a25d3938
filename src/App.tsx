@@ -1,8 +1,6 @@
 import { useEffect, useSyncExternalStore } from 'react';
 import { GameSettingsMetrolinkLite, GameplayMetrolinkLite } from './screens';
 import { metroLinkStore } from './features/metrolink-lite/metrolink-lite.store';
-import { actReturnToGameplay } from './features/surf-game-settings/act_return_to_gameplay';
-import { actSavePreferences } from './features/surf-game-settings/act_save_preferences';
 import { attachMetroLinkTestBridge, detachMetroLinkTestBridge } from './test/bridge';
 
 export default function App() {
@@ -40,7 +38,7 @@ export default function App() {
   };
 
   const settingsActions = {
-    'close-1': actReturnToGameplay(actions),
+    'close-1': actions.closeSettings,
     'beginner-2': () => actions.setDifficulty('beginner'),
     'commuter-3': () => actions.setDifficulty('commuter'),
     'express-4': () => actions.setDifficulty('express'),
@@ -48,7 +46,7 @@ export default function App() {
     'button-6-6': actions.pause,
     'button-7-7': actions.advance,
     'reset-defaults-8': actions.resetDefaults,
-    'save-and-return-9': actSavePreferences(actions),
+    'save-and-return-9': actions.saveAndReturn,
   };
 
   return (
