@@ -7,6 +7,7 @@
 // 3. Wire interactive controls through the typed actions prop
 // 4. Replace placeholder data with props/state
 
+import { useState } from "react";
 import { Gauge, MousePointerClick, Music, Route, Timer, Volume2, X } from "lucide-react";
 
 
@@ -18,6 +19,19 @@ export interface GameSettingsMetrolinkLiteProps {
 }
 
 export function GameSettingsMetrolinkLite({ actions }: GameSettingsMetrolinkLiteProps) {
+  const [difficulty, setDifficulty] = useState("commuter");
+  const [gameSpeed, setGameSpeed] = useState(50);
+  const [soundEffectsEnabled, setSoundEffectsEnabled] = useState(true);
+  const [backgroundJazzEnabled, setBackgroundJazzEnabled] = useState(false);
+  const [settingsMessage, setSettingsMessage] = useState("Commuter settings ready");
+
+  const speedLabel = gameSpeed < 35 ? "Relaxed" : gameSpeed > 70 ? "Rapid" : "Normal";
+  const selectDifficulty = (nextDifficulty: string, actionId: GameSettingsMetrolinkLiteActionId) => {
+    setDifficulty(nextDifficulty);
+    setSettingsMessage(`${nextDifficulty[0].toUpperCase()}${nextDifficulty.slice(1)} difficulty selected`);
+    actions?.[actionId]?.();
+  };
+
   return (
     <>
       {/* Simulated Dimmed Gameplay Background */}
@@ -54,26 +68,32 @@ export function GameSettingsMetrolinkLite({ actions }: GameSettingsMetrolinkLite
       <section>
       <h2 className="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase">Difficulty</h2>
       <div className="flex bg-surface-container-low rounded-lg p-1 border border-outline-variant">
-      <button className="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant" type="button" data-action-id="beginner-2" onClick={actions?.["beginner-2"]}>Beginner</button>
-      <button className="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold" type="button" data-action-id="commuter-3" onClick={actions?.["commuter-3"]}>Commuter</button>
-      <button className="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant" type="button" data-action-id="express-4" onClick={actions?.["express-4"]}>Express</button>
-      <button className="flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary text-on-surface-variant hover:bg-surface-variant" type="button" data-action-id="bullet-5" onClick={actions?.["bullet-5"]}>Bullet</button>
+      <button className={`flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary ${difficulty === "beginner" ? "bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold" : "text-on-surface-variant hover:bg-surface-variant"}`} type="button" aria-pressed={difficulty === "beginner"} data-action-id="beginner-2" onClick={() => selectDifficulty("beginner", "beginner-2")}>Beginner</button>
+      <button className={`flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary ${difficulty === "commuter" ? "bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold" : "text-on-surface-variant hover:bg-surface-variant"}`} type="button" aria-pressed={difficulty === "commuter"} data-action-id="commuter-3" onClick={() => selectDifficulty("commuter", "commuter-3")}>Commuter</button>
+      <button className={`flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary ${difficulty === "express" ? "bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold" : "text-on-surface-variant hover:bg-surface-variant"}`} type="button" aria-pressed={difficulty === "express"} data-action-id="express-4" onClick={() => selectDifficulty("express", "express-4")}>Express</button>
+      <button className={`flex-1 py-2 px-3 rounded-md font-body-md text-body-md text-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary ${difficulty === "bullet" ? "bg-surface-container-lowest text-primary shadow-sm border border-outline-variant font-bold" : "text-on-surface-variant hover:bg-surface-variant"}`} type="button" aria-pressed={difficulty === "bullet"} data-action-id="bullet-5" onClick={() => selectDifficulty("bullet", "bullet-5")}>Bullet</button>
       </div>
       </section>
       {/* Game Speed Section */}
       <section>
       <div className="flex justify-between items-center mb-3">
       <h2 className="font-label-caps text-label-caps text-on-surface-variant uppercase">Game Speed</h2>
-      <span className="font-body-md text-body-md text-primary font-bold">Normal</span>
+      <span className="font-body-md text-body-md text-primary font-bold">{speedLabel}</span>
       </div>
       <div className="flex items-center gap-4">
       <Gauge  style={{fontVariationSettings: "'FILL' 0"}} className="text-on-surface-variant" aria-hidden={true} focusable="false" />
       <div className="relative flex-1 h-2 bg-surface-container-high rounded-full overflow-hidden">
-      <div className="absolute top-0 left-0 h-full bg-secondary w-1/2 rounded-full"></div>
+      <div className="absolute top-0 left-0 h-full bg-secondary rounded-full" style={{ width: `${gameSpeed}%` }}></div>
       </div>
       <Gauge  style={{fontVariationSettings: "'FILL' 1"}} className="text-on-surface-variant" aria-hidden={true} focusable="false" />
       </div>
-      <input aria-label="Game Speed Slider" className="w-full mt-2 opacity-0 absolute h-6 cursor-pointer" max="100" min="1" type="range" defaultValue="50" />
+      <input aria-label="Game Speed Slider" aria-valuetext={speedLabel} className="w-full mt-2 opacity-0 absolute h-6 cursor-pointer" max="100" min="1" type="range" value={gameSpeed} onChange={(event) => {
+        const nextSpeed = Number(event.currentTarget.value);
+        const nextSpeedLabel = nextSpeed < 35 ? "Relaxed" : nextSpeed > 70 ? "Rapid" : "Normal";
+
+        setGameSpeed(nextSpeed);
+        setSettingsMessage(`${nextSpeedLabel} game speed selected`);
+      }} />
       </section>
       {/* Audio Section */}
       <section>
@@ -85,8 +105,14 @@ export function GameSettingsMetrolinkLite({ actions }: GameSettingsMetrolinkLite
       <Volume2  style={{fontVariationSettings: "'FILL' 0"}} className="text-primary" aria-hidden={true} focusable="false" />
       <span className="font-body-md text-body-md text-primary">Sound Effects</span>
       </div>
-      <button aria-checked={true} className="w-12 h-6 bg-secondary rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border border-transparent" role="switch" type="button" aria-label="Button 6" data-action-id="button-6-6" onClick={actions?.["button-6-6"]}>
-      <span className="absolute right-1 top-1 w-4 h-4 bg-surface-container-lowest rounded-full transition-transform"></span>
+      <button aria-checked={soundEffectsEnabled} className={`w-12 h-6 rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border ${soundEffectsEnabled ? "bg-secondary border-transparent" : "bg-surface-container-high border-outline-variant"}`} role="switch" type="button" aria-label="Button 6" data-action-id="button-6-6" onClick={() => {
+        setSoundEffectsEnabled((enabled) => {
+          setSettingsMessage(`Sound effects ${enabled ? "off" : "on"}`);
+          return !enabled;
+        });
+        actions?.["button-6-6"]?.();
+      }}>
+      <span className={`absolute ${soundEffectsEnabled ? "right-1" : "left-1"} top-1 w-4 h-4 bg-surface-container-lowest rounded-full transition-transform`}></span>
       </button>
       </div>
       {/* Toggle 2 */}
@@ -95,8 +121,14 @@ export function GameSettingsMetrolinkLite({ actions }: GameSettingsMetrolinkLite
       <Music  style={{fontVariationSettings: "'FILL' 0"}} className="text-on-surface-variant" aria-hidden={true} focusable="false" />
       <span className="font-body-md text-body-md text-on-surface-variant">Background Jazz</span>
       </div>
-      <button aria-checked={false} className="w-12 h-6 bg-surface-container-high rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border border-outline-variant" role="switch" type="button" aria-label="Button 7" data-action-id="button-7-7" onClick={actions?.["button-7-7"]}>
-      <span className="absolute left-1 top-1 w-4 h-4 bg-surface-tint rounded-full transition-transform"></span>
+      <button aria-checked={backgroundJazzEnabled} className={`w-12 h-6 rounded-full relative transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary border ${backgroundJazzEnabled ? "bg-secondary border-transparent" : "bg-surface-container-high border-outline-variant"}`} role="switch" type="button" aria-label="Button 7" data-action-id="button-7-7" onClick={() => {
+        setBackgroundJazzEnabled((enabled) => {
+          setSettingsMessage(`Background jazz ${enabled ? "off" : "on"}`);
+          return !enabled;
+        });
+        actions?.["button-7-7"]?.();
+      }}>
+      <span className={`absolute ${backgroundJazzEnabled ? "right-1 bg-surface-container-lowest" : "left-1 bg-surface-tint"} top-1 w-4 h-4 rounded-full transition-transform`}></span>
       </button>
       </div>
       </div>
@@ -122,8 +154,19 @@ export function GameSettingsMetrolinkLite({ actions }: GameSettingsMetrolinkLite
       </div>
       {/* Actions */}
       <div className="px-container-margin py-4 border-t border-outline-variant bg-surface-container-lowest rounded-b-xl flex justify-between items-center shrink-0">
-      <button className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1" type="button" data-action-id="reset-defaults-8" onClick={actions?.["reset-defaults-8"]}>Reset Defaults</button>
-      <button className="bg-primary text-on-primary font-body-md text-body-md font-bold py-2 px-6 rounded transit-shadow-level-2 transit-button-press transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:transit-shadow-level-3" type="button" data-action-id="save-and-return-9" onClick={actions?.["save-and-return-9"]}>Save &amp; Return</button>
+      <p className="font-body-md text-body-md text-on-surface-variant" aria-live="polite">{settingsMessage}</p>
+      <button className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded px-2 py-1" type="button" data-action-id="reset-defaults-8" onClick={() => {
+        setDifficulty("commuter");
+        setGameSpeed(50);
+        setSoundEffectsEnabled(true);
+        setBackgroundJazzEnabled(false);
+        setSettingsMessage("Default settings restored");
+        actions?.["reset-defaults-8"]?.();
+      }}>Reset Defaults</button>
+      <button className="bg-primary text-on-primary font-body-md text-body-md font-bold py-2 px-6 rounded transit-shadow-level-2 transit-button-press transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary hover:transit-shadow-level-3" type="button" data-action-id="save-and-return-9" onClick={() => {
+        setSettingsMessage("Preferences saved");
+        actions?.["save-and-return-9"]?.();
+      }}>Save &amp; Return</button>
       </div>
       </div>
     </>
