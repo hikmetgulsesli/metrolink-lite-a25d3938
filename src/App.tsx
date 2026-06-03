@@ -50,7 +50,11 @@ export default function App() {
   };
 
   return (
-    <div data-setfarm-root="metrolink-lite" data-testid="setfarm-app-root">
+    <div
+      className="min-h-screen h-dvh flex flex-col overflow-hidden bg-surface-container-lowest"
+      data-setfarm-root="metrolink-lite"
+      data-testid="setfarm-app-root"
+    >
       {state.activeScreen === 'settings' ? (
         <GameSettingsMetrolinkLite actions={settingsActions} />
       ) : (
